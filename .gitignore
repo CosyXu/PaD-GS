@@ -3,16 +3,15 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.egg-info/
+*.egg/
+*.egg
 dist/
 build/
-*.egg
 
 # Compiled extensions (submodule build outputs)
 *.so
 *.o
 *.a
-submodules/*/build/
-submodules/*/*.egg-info/
 
 # Training outputs
 outputs/

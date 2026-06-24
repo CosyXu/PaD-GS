@@ -64,7 +64,7 @@ class ModelParams(ParamGroup):
         self.add_cov_dist = True
         self.add_color_dist = True
 
-        self.add_distortion_map = False
+        self.add_distortion_map = True
 
         self.dataset_type = '360Roam'
         self.crop_image = True

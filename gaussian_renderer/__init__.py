@@ -43,7 +43,7 @@ def generate_neural_gaussians(viewpoint_camera, pc : GaussianModel, visible_mask
     cat_local_view_wodist = torch.cat([feat, ob_view], dim=1) # [N, c+3]
 
     if pc.add_distortion_map:
-        distortion = ob_view[:, 2:3] ** 2
+        distortion = (1 - ob_view[:, 2:3] ** 2).sqrt()
         cat_local_view = torch.cat([feat, ob_view, ob_dist, distortion], dim=1) # [N, c+3+1+1]
 
     if pc.appearance_dim > 0:
