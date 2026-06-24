@@ -86,8 +86,7 @@ def saveRuntimeCode(dst: str) -> None:
 
 def training(dataset, opt, pipe, dataset_name, testing_iterations, saving_iterations, checkpoint_iterations, checkpoint, debug_from, wandb=None, logger=None, ply_path=None):
     first_iter = 0
-    # tb_writer = prepare_output_and_logger(dataset)
-    tb_writer = None
+    tb_writer = prepare_output_and_logger(dataset)
     gaussians = GaussianModel(dataset.feat_dim, dataset.n_offsets, dataset.voxel_size, dataset.update_depth, dataset.update_init_factor, dataset.update_hierachy_factor, dataset.use_feat_bank, 
                               dataset.appearance_dim, dataset.ratio, dataset.add_opacity_dist, dataset.add_cov_dist, dataset.add_color_dist, dataset.add_distortion_map)
     scene = Scene(dataset, gaussians, ply_path=ply_path, shuffle=False)
